@@ -1,0 +1,85 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "activity": {
+            "type": "string"
+        },
+        "ambience": {
+            "type": "string"
+        },
+        "genre": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "q": {
+            "type": "string"
+        },
+        "from_day": {
+            "required": false,
+            "type": "string"
+        },
+        "to_day": {
+            "required": false,
+            "type": "string"
+        },
+        "capacity_min": {
+            "required": false,
+            "type": "number",
+            "format": "integer"
+        },
+        "capacity_max": {
+            "required": false,
+            "type": "number",
+            "format": "integer"
+        },
+        "center": {
+            "type": "string"
+        },
+        "radius": {
+            "type": "integer"
+        },
+        "bbox": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "polygon": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "within": {
+            "required": false,
+            "type": "string"
+        },
+        "offset": {
+            "type": "integer"
+        },
+        "limit": {
+            "type": "integer"
+        },
+        "fieldset": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "summary",
+                "detail",
+                "context",
+                "minicontext"
+            ],
+            "default": "context"
+        }
+    }
+}

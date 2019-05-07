@@ -1,0 +1,103 @@
+{
+    "title": "LotaData",
+    "description": "Access the most exhaustive, accurate and up-to-date collection of global and hyper-local geocoded events and activities across a wide range of categories and genres",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/lotadata.com/2.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api2.lotadata.com/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "api_key (api_key)",
+                "viewClass": "TextFieldView",
+                "note": "Your API key"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_events": {
+            "main": "./lib/actions/get_events.js",
+            "title": "Find event occurrences in the area. Returns results at specific place and time, event groups are expanded for every occurrence.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_events.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_events__id_": {
+            "main": "./lib/actions/get_events__id_.js",
+            "title": "Get Specific event details.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_events__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_places": {
+            "main": "./lib/actions/get_places.js",
+            "title": "Venues, landmarks, regions, these are all places to search.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_places.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_places__id_": {
+            "main": "./lib/actions/get_places__id_.js",
+            "title": "Get specific place details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_places__id_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

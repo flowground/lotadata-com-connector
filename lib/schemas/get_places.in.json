@@ -1,0 +1,103 @@
+{
+    "type": "object",
+    "properties": {
+        "category": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "function": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "ambience": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "tag": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "type": {
+            "type": "string"
+        },
+        "name": {
+            "type": "string"
+        },
+        "exact": {
+            "type": "boolean"
+        },
+        "capacity_min": {
+            "required": false,
+            "type": "number",
+            "format": "integer"
+        },
+        "capacity_max": {
+            "required": false,
+            "type": "number",
+            "format": "integer"
+        },
+        "street": {
+            "type": "string"
+        },
+        "locality": {
+            "type": "string"
+        },
+        "region": {
+            "type": "string"
+        },
+        "postal_code": {
+            "type": "string"
+        },
+        "country": {
+            "type": "string"
+        },
+        "center": {
+            "type": "string"
+        },
+        "radius": {
+            "type": "integer"
+        },
+        "bbox": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "polygon": {
+            "required": false,
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "within": {
+            "required": false,
+            "type": "string"
+        },
+        "offset": {
+            "type": "integer"
+        },
+        "limit": {
+            "type": "integer"
+        },
+        "fieldset": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "summary",
+                "detail",
+                "context"
+            ],
+            "default": "context"
+        }
+    }
+}
